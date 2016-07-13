@@ -14,10 +14,12 @@ class Render:
         self.canvas.pack()
         
     def createWindow(self):
-        self.canvas.paint_background()
+        self.canvas.paintBackground()
         self.window.mainloop()
-    
+
 render = Render()
+
+render.canvas.bind('<Button-1>', render.canvas.addNewPoint)
 
 render.createWindow()
         
