@@ -2,6 +2,7 @@ import tkinter
 import math
 
 def hsl2rgb(h, s, l):
+    h = (h // 10) * 10
     h = h / 360
     s = s / 100
     l = l / 100
@@ -72,6 +73,7 @@ class Canvas(tkinter.Canvas):
                     d = distance(i, j, point['x'], point['y'])
                     if d < 1:
                         d = 1
+                    d = d * 0.01;
                     color = color + (int(point['value']) - 100) / d     
                 if(color > 200):
                     color = 200
@@ -83,4 +85,5 @@ class Canvas(tkinter.Canvas):
         pressure = input("Enter pressure within [0, 200]:")
         point = {'x': event.x, 'y':event.y, 'value':pressure}
         self.specialPoint.append(point)
-          
+        rgb = hsl2rgb(200,100,50)
+        

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Canvas</class>
+ <widget class="QWidget" name="Canvas">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>653</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Canvas</string>
+  </property>
+  <widget class="QWidget" name="TextureMap" native="true">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>50</y>
+     <width>256</width>
+     <height>256</height>
+    </rect>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="PressureValue">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>50</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Add">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>50</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>290</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>选中点的气压值</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PressureShow">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>290</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
