@@ -14,12 +14,18 @@ class Render:
         self.canvas.pack()
         
     def createWindow(self):
-        self.canvas.paintBackground()
-        self.window.mainloop()
+        self.canvas.paint()
+        
+    def addNewPoint(self, event):
+        self.canvas.addNewPoint(event)
+        self.canvas.update()
+        self.canvas.delete("all")
+        self.canvas.paint()
 
 render = Render()
 
-render.canvas.bind('<Button-1>', render.canvas.addNewPoint)
+render.canvas.bind('<Button-1>', render.addNewPoint)
 
 render.createWindow()
-        
+
+render.window.mainloop()
