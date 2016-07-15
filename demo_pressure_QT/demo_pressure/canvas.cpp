@@ -82,8 +82,8 @@ void Canvas::paintPressureMap(){
     }
 
     if(isPaintWind){
-        for(int i = 10; i < this->pressureMap->width; i = i + 10){
-            for(int j = 10; j < this->pressureMap->height; j = j + 10 ) {
+        for(int i = 20; i < this->pressureMap->width; i = i + 20){
+            for(int j = 20; j < this->pressureMap->height; j = j + 20 ) {
                 drawWind(&paint, QVector2D(i, j), this->pressureMap->direction[i][j]);
             }
         }
@@ -114,7 +114,7 @@ void Canvas::paintDirectionMap(){
 }
 
 void Canvas::drawWind(QPainter *paint, QVector2D pos, QVector2D dirct){
-    paint->setPen(QPen(QColor(255, 255, 255), 2));
+    paint->setPen(QPen(QColor(255, 255, 255), 1));
 
     float angle = qAtan2(dirct.y(), dirct.x());
 
@@ -122,9 +122,9 @@ void Canvas::drawWind(QPainter *paint, QVector2D pos, QVector2D dirct){
     paint->rotate(angle / 3.14 * 180);
 
     QPainterPath textPath;
-    QFont timesFont("Times", 5);
+    QFont timesFont("Times", 15);
     timesFont.setStyleStrategy(QFont::ForceOutline);
-    textPath.addText(0, 0, timesFont, tr("-->"));
+    textPath.addText(0, 0, timesFont, tr("→"));
 
     paint->drawPath(textPath);
     paint->resetTransform();
