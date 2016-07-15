@@ -15,8 +15,9 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,33 +25,60 @@ QT_BEGIN_NAMESPACE
 class Ui_Canvas
 {
 public:
-    QWidget *TextureMap;
-    QLineEdit *PressureValue;
     QPushButton *Add;
-    QLabel *label;
-    QLabel *PressureShow;
+    QSlider *PressureValue;
+    QLabel *PressureMap;
+    QRadioButton *Isobars;
+    QSlider *ScaleValue;
+    QPushButton *DistanceScale;
+    QLabel *DirectionMap;
+    QPushButton *DrawDirection;
+    QPushButton *DrawWind;
+    QPushButton *Reset;
+    QPushButton *Save;
 
     void setupUi(QWidget *Canvas)
     {
         if (Canvas->objectName().isEmpty())
             Canvas->setObjectName(QStringLiteral("Canvas"));
-        Canvas->resize(653, 400);
-        TextureMap = new QWidget(Canvas);
-        TextureMap->setObjectName(QStringLiteral("TextureMap"));
-        TextureMap->setGeometry(QRect(50, 50, 256, 256));
-        TextureMap->setMouseTracking(false);
-        PressureValue = new QLineEdit(Canvas);
-        PressureValue->setObjectName(QStringLiteral("PressureValue"));
-        PressureValue->setGeometry(QRect(410, 50, 113, 20));
+        Canvas->resize(662, 500);
         Add = new QPushButton(Canvas);
         Add->setObjectName(QStringLiteral("Add"));
-        Add->setGeometry(QRect(540, 50, 75, 23));
-        label = new QLabel(Canvas);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(410, 290, 91, 16));
-        PressureShow = new QLabel(Canvas);
-        PressureShow->setObjectName(QStringLiteral("PressureShow"));
-        PressureShow->setGeometry(QRect(420, 290, 54, 12));
+        Add->setGeometry(QRect(230, 400, 75, 21));
+        PressureValue = new QSlider(Canvas);
+        PressureValue->setObjectName(QStringLiteral("PressureValue"));
+        PressureValue->setGeometry(QRect(50, 400, 160, 19));
+        PressureValue->setOrientation(Qt::Horizontal);
+        PressureMap = new QLabel(Canvas);
+        PressureMap->setObjectName(QStringLiteral("PressureMap"));
+        PressureMap->setGeometry(QRect(50, 50, 256, 256));
+        PressureMap->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        Isobars = new QRadioButton(Canvas);
+        Isobars->setObjectName(QStringLiteral("Isobars"));
+        Isobars->setGeometry(QRect(50, 460, 89, 16));
+        ScaleValue = new QSlider(Canvas);
+        ScaleValue->setObjectName(QStringLiteral("ScaleValue"));
+        ScaleValue->setGeometry(QRect(50, 430, 160, 19));
+        ScaleValue->setOrientation(Qt::Horizontal);
+        DistanceScale = new QPushButton(Canvas);
+        DistanceScale->setObjectName(QStringLiteral("DistanceScale"));
+        DistanceScale->setGeometry(QRect(230, 430, 75, 21));
+        DirectionMap = new QLabel(Canvas);
+        DirectionMap->setObjectName(QStringLiteral("DirectionMap"));
+        DirectionMap->setGeometry(QRect(356, 50, 256, 256));
+        DirectionMap->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        DrawDirection = new QPushButton(Canvas);
+        DrawDirection->setObjectName(QStringLiteral("DrawDirection"));
+        DrawDirection->setGeometry(QRect(380, 410, 221, 21));
+        DrawWind = new QPushButton(Canvas);
+        DrawWind->setObjectName(QStringLiteral("DrawWind"));
+        DrawWind->setGeometry(QRect(380, 450, 221, 21));
+        Reset = new QPushButton(Canvas);
+        Reset->setObjectName(QStringLiteral("Reset"));
+        Reset->setGeometry(QRect(140, 460, 75, 21));
+        Save = new QPushButton(Canvas);
+        Save->setObjectName(QStringLiteral("Save"));
+        Save->setGeometry(QRect(230, 460, 75, 21));
 
         retranslateUi(Canvas);
 
@@ -61,8 +89,14 @@ public:
     {
         Canvas->setWindowTitle(QApplication::translate("Canvas", "Canvas", 0));
         Add->setText(QApplication::translate("Canvas", "Add", 0));
-        label->setText(QApplication::translate("Canvas", "\351\200\211\344\270\255\347\202\271\347\232\204\346\260\224\345\216\213\345\200\274", 0));
-        PressureShow->setText(QString());
+        PressureMap->setText(QString());
+        Isobars->setText(QApplication::translate("Canvas", "Isobars", 0));
+        DistanceScale->setText(QApplication::translate("Canvas", "Scale", 0));
+        DirectionMap->setText(QString());
+        DrawDirection->setText(QApplication::translate("Canvas", "Generate Direction Map", 0));
+        DrawWind->setText(QApplication::translate("Canvas", "Draw Wind", 0));
+        Reset->setText(QApplication::translate("Canvas", "Reset", 0));
+        Save->setText(QApplication::translate("Canvas", "Save", 0));
     } // retranslateUi
 
 };
