@@ -1,4 +1,5 @@
 # 风力贴图生成器
+[English](./English_README.md)
 
 ## 需求
 
